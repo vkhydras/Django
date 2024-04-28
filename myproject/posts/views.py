@@ -7,3 +7,9 @@ def posts_list(req):
     return render(req, 'posts/posts_list.html',{
         'posts':posts
     })
+    
+def posts_page(req, slug):
+    post = Post.objects.get(slug=slug)
+    return render(req, 'posts/post_page.html',{
+        'post':post
+    })
